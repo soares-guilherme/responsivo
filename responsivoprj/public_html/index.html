@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html lang="pt-br">
+    
+    <head>
+        <title>Exemplo media query</title>
+        
+        <meta charset="UTF-8">
+        <meta name="description" content="Exemplo prático de uso da funcionalidade media query">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--[if lt IE9]>
+        <script src="js/html5shiv.js"></script>
+        <script src="js/css3-mediaqueries.js"></script>
+        <![endif]-->
+        <style>
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+   MODIFICADO
+*/
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, blockquote, 
+a, ul, li, article, aside, footer, header, nav, section {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, footer, header, nav, section {
+	display: block;
+}
+
+ul {
+	list-style: none;
+}
+
+/* Fim Eric Meyer reset */
+/* utilidades */
+*, *:before, *:after {
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box;
+   box-sizing: border-box;
+}
+
+.cf:before,
+.cf:after {
+    content: " "; 
+    display: table;
+}
+
+.cf:after {
+    clear: both;
+}
+
+.cf {
+    *zoom: 1;
+}
+
+/* Fim utilidades */
+body {
+	font: 100%/1.4 sans-serif;
+}
+
+
+h1, h2 {
+	font-weight: bold;
+}
+
+h1 { font-size: 140%; }
+
+h2 { font-size: 120%; }
+
+p { margin: 0.6em 0; }
+
+p:last-child { 
+	margin-bottom:0; 
+	padding-bottom: 0.6em
+}
+
+.topo { 
+	background: #3e4095; 
+	color: #fff; 
+	font-size: 70%;
+	line-height: 2.5em;
+	text-align: center;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.principal { background: rgb(255, 255, 0);}
+
+.principal header, .auxiliar h1 { text-align: center; color: #3e4095;}
+
+.bloco, .auxiliar article {
+	border-bottom: 1px solid #3e4095;
+	padding: 0.8em 0;
+	}
+
+.bloco h2 {
+	font-weight: bold;
+	font-size: 140%;
+}
+
+.bloco h3 {
+	font-weight: bold;
+	font-size: 130%;
+}
+
+.auxiliar { background: #fff; }
+
+.auxiliar p { margin-top: 0; }
+
+
+.rodape { 
+	background: #3e4095; 
+	color: #fff;
+	text-align: center;
+	}
+
+a, a:active {
+	text-decoration: none;
+	color: blue;
+}
+
+a:hover {
+	text-decoration: underline;
+	color: #333;
+}
+
+/* navegação mobile */
+.navegacao ul {
+	margin:  0;
+	padding: 0;
+}
+
+.navegacao li {
+	list-style: none;
+	font-size: 110%; 
+	border-bottom: 1px solid #fff; 
+}
+
+.menu-icon {
+	padding-top: .5em;
+	font-size: 120%; 
+	color: #fff; 
+}
+
+.navegacao a {
+	display: block;
+	padding: 0.25em 1em 0.25em 1em;
+	text-decoration: none;
+}
+
+.navegacao li a {
+	color: #fff;
+}
+
+.navegacao li a:hover, .navegacao li a:focus, .navegacao li a:active {
+	color: #3e4095;
+}
+
+.navegacao {
+	font: bold 100%/1.4 sans-serif; 
+	background: #00a859;
+	height: 2.8em; 
+	overflow: hidden;
+		webkit-transition: height 2s;
+		-moz-transition: height 2s; 
+		-o-transition: height 2s; 
+		-ms-transition: height 2s; 
+		transition: height 2s;
+}
+
+.navegacao:hover, .navegacao:focus, .navegacao:active {
+	height: 20em; 
+		-webkit-transition: height 2s; 
+		-moz-transition: height 2s; 
+		-o-transition: height 2s; 
+		-ms-transition: height 2s; 
+		transition: height 2s;
+}
+
+/* Fim navegação mobile */
+@media all and (min-width:30em) {
+	body {	
+		background-image: url(imagens/bg1000x80cap3.jpg);
+		background-repeat: no-repeat;
+		background-position: left top;
+	}
+
+	.topo { background: transparent; }
+
+	.topo h1 { 
+		color: #00a859; 
+		font-size: 250%;
+		margin: 0.6em 0;
+		text-shadow: 3px 3px 2px #666;
+	}
+
+	.main-page { background: #00a859; }
+
+	.principal {
+		width: 70%;
+		padding: 0 .5em;
+		float: right;
+	}
+
+	.auxiliar {
+		width: 70%;
+		float: right;
+	}
+
+	.navegacao {
+		float:left;
+		width: 30%;
+		height: 20em;
+	}
+
+	.navegacao li:first-child { border-top: 1px solid #fff; }
+
+	.menu-icon {
+		text-indent: -1000em; 
+		height: 0;	
+		line-hight: 0;
+	}
+
+}
+
+@media all and (min-width:62.5em) {
+	body {	
+		background-image: url(imagens/bg1200x1200cap3.jpg);
+		background-size: cover;
+	}
+
+	.topo h1 { 
+		font-size: 480%;
+		margin: 0.8em 0;
+	}
+
+	.main-page {background: none;}
+
+	.principal {
+		width: 60%;
+		float: left;
+		background: transparent;
+	}
+
+	.principal header {
+		background: #3e4095;
+		color:#fff;
+		margin-bottom: 0.3em;
+	}		
+	.bloco {
+		padding: 0 .5em;
+		background: rgba(255, 255, 0, 0.7);
+	}
+	.auxiliar {
+		width: 25%;
+		padding: 0 0.4em;
+	}
+	.navegacao {
+		width: 15%;
+	}
+}
+@media all and (min-width:75em) {
+	.tudo {
+		max-width: 100em;
+		margin: 0 auto;
+	}
+	.principal {
+		width: 57%;
+		margin: 0 1.5%;
+	}
+	.rodape {
+		line-height: 3em;
+	}
+	.principal header {border-radius: 0.5em;}
+	.bloco {
+		border-top-left-radius: 0.5em;
+		border-top-right-radius: 0.5em;
+		border-bottom-width: 1em;
+		border-bottom-color: #00a859;
+		margin-bottom: 1em;
+	}
+}
+</style>
+</head>
+<body id="home">
+<div class="tudo">
+	<header class="topo">	
+    	<h1>Copa do Mundo da FIFA — Brasil 2014</h1>
+	</header>
+<nav class="navegacao" aria-haspopup="true">
+	<h2 class="menu-icon">Menu <span>&equiv;</span></h2>
+    <ul class="menu">
+		<li><a href="#" class="home">Home</a></li>
+		<li><a href="#" class="sedes">Sedes</a></li>
+		<li><a href="#" class="fotos">Fotos</a></li>
+		<li><a href="#" class="grupos">Grupos</a></li>
+		<li><a href="#" class="jogos">Jogos</a></li>
+		<li><a href="#" class="ingressos">Ingressos</a></li>
+		<li><a href="#" class="transporte">Transporte</a></li>
+	</ul>
+</nav>
+<main class="main-page cf">
+<section class="principal">
+	<header>
+		<hgroup>    	
+            <h1>Grupo D</h1>
+            <h2>O grupo da morte</h2>
+		</hgroup>    	
+    </header>
+<div class="bloco">
+    <h2>Três campeões mundiais e uma "zebra"</h2>
+    <p>Na quarta chave da Copa do Mundo da FIFA Brasil 2014, se enfrentarão três seleções que já entraram para a história e outra que tentará estragar a festa delas. A torcida já esfrega as mãos na expectativa de encontros espetaculares entre ingleses, italianos, uruguaios e costa-riquenhos. Após o encerramento do Sorteio Final na Costa do Sauípe, os protagonistas se pronunciaram sobre a natureza especial do grupo.</p>
+</div>
+
+<div class="bloco">
+<h3>Celso Otero, técnico-assistente do <span>Uruguai</span></h3>
+<blockquote><p>"Tem três campeões mundiais em nosso grupo. Isso já mostra a competitividade que haverá. Agora, o que resta é curtir o torneio. Conhecemos bem nossos adversários. Jogamos contra a Itália na Copa das Confederações e isso serve de referência para ambos. Enfrentamos a Costa Rica na repescagem para a Copa passada, apesar de que, sem dúvida, nestes quatro anos eles evoluíram e houve a troca de alguns nomes. A Inglaterra é uma seleção de peso. Agora é hora de nos reunirmos com mais calma e ver que possibilidades são as mais convenientes para os jogos."</p></blockquote>
+</div>
+
+<div class="bloco">
+<h3>Jorge Luis Pinto, <span>Costa Rica</span></h3>
+<blockquote><p>"Estamos contentes com o resultado. É desnecessário dizer que se trata de três grandes equipes. O Uruguai é uma seleção complicada sempre, e Itália e Inglaterra estão entre as eternas potências da Europa. É claro que o mundo estará de olho nos conjuntos que estão a nossa volta, mas sabíamos que teríamos adversários difíceis e o fato de eles serem campeões mundiais faz aumentar nossa vontade de realizar um grande torneio. Isso nos obriga a ser a seleção mais preparada do grupo, se não a melhor."</p></blockquote>
+
+<h3>Roy Hodgson, <span>Inglaterra</span></h3>
+<blockquote><p>"Quando penso no grupo, imagino que vai ser muito duro. Algumas pessoas já o chamam de 'Grupo da Morte', mas em boa parte por nossa presença. Nossos adversários têm jogadores de altíssimo nível. Suárez é um jogador de primeira, assim como Cavani, Balotelli ou Pirlo. Mas também gosto de pensar que temos dois ou três jogadores em nossa seleção que estão no mesmo nível, e que a Itália e o Uruguai estão começando a pensar em Gerrard, Rooney e Cia."</p></blockquote>
+</div>
+
+<div class="bloco">
+<h3>Cesare Prandelli, <span>Itália</span></h3>
+<blockquote><p>"Não é todos os dias que se veem juntos três campeões mundiais, mas é justamente isso que é tem de bonito uma Copa do Mundo: é a maior festa do futebol e, como tal, é um lugar onde se encontram as grandes seleções. Como disse antes, já sabia que o que viria pela frente seria difícil, e por isso o que realmente muda com o sorteio são as questões logísticas. Agora, já sabemos onde jogaremos e os problemas que teremos que encarar, de temperatura e de viagens. Com isso, podemos começar o trabalho para estarmos bem preparados."</p></blockquote>
+</div>
+    
+<small>Fonte: FIFA</small>
+</section> 
+
+<aside class="auxiliar">
+	<h1>Novidades</h1>
+        <article>
+            <header>
+            	<h2>Grupo A: O Brasil é o grande favorito</h2>
+                <small>Sexta-feira 6 de dezembro de 2013</small>
+			</header>
+            <p><a href="#">Quando a equipe com mais títulos mundiais na história e que joga em casa está em seu grupo, nada mais normal do que considerá-la a favorita. É o o con...</a></p> 
+		</article>
+
+    	<article>
+            <header>
+            	<h2>Grupo B: Déjà vu africano</h2>
+                <small>Sexta-feira 6 de dezembro de 2013</small>
+			</header>
+            <p><a href="#">Espanha e Holanda reeditam a final de quatro anos atrás já na primeira rodada de uma chave que tem ainda o Chile correndo por fora e a Austrália sonha...</a></p> 
+		</article>
+
+    	<article>
+			<header>
+            	<h2>Grupo E: "Poderia ser mais complicado"</h2>
+                <small>Sexta-feira 6 de dezembro de 2013</small>
+			</header>
+            <p><a href="#">Os treinadores colombianos Reinaldo Rueda e Luis Suárez enfrentarão seleções que já foram dirigidas por eles em edições anteriores da Copa do Mundo da...</a></p> 
+		</article>
+</aside>
+</main>
+<footer class="rodape">
+	<small>Guia Portal da Copa do Mundo Brasil © Copyright 2014 Todos os direitos reservados</small>
+</footer>
+</div> <!-- /.tudo -->
+</body>
+</html>
+
